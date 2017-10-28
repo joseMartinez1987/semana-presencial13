@@ -9,15 +9,22 @@ el valor llegue a cero y cambiar el texto de bomba por
     <title></title>
   </head>
   <body>
-    <h1> !!! La bomba !!! </h1>
-    <h2 id="timer">15</h2>
+    <h1 id="boom"> !!! La bomba !!! </h1>
+    <h2 id="timer">2</h2>
     <script>
         var timer_tag = document.getElementById('timer');
         var timer = timer_tag.innerHTML;
         timer = parseInt(timer);
+
         setInterval(function(){
           timer = timer - 1
           timer_tag.innerHTML = timer
+          if (document.getElementById('boom').innerHTML == "Boom") {
+            timer_tag.innerHTML=0
+          }
+          if (timer == 0) {
+            document.getElementById('boom').innerHTML = "Boom"
+          }
         }, 1000);
     </script>
   </body>

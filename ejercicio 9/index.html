@@ -9,14 +9,15 @@ como elementos de una lista ordenada  -->
     <title></title>
   </head>
   <body>
-    <ol id="dias">
+    <ol id="lista">
     </ol>
     <script type="text/javascript">
       var dias = ["lunes", "martes", "miércoles"]
-      var parent_tag = document.getElementById('dias');
+      var parent_tag = document.getElementById('lista');
       dias.map(function(x){
-        var doc_element = document.createElement("p");
-        node = document.createTextNode("hola");
+
+        var doc_element = document.createElement("li");
+        node = document.createTextNode(x + " hola");
         doc_element.appendChild(node);
         parent_tag.appendChild(doc_element);
       });
